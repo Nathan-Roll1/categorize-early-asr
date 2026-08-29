@@ -1,0 +1,7 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+*.log
+figs/*.pdf
+figs/fig1_output.txt

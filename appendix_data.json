@@ -1,0 +1,224 @@
+{
+  "model_metadata": {
+    "whisper-tiny": {
+      "params": "39M",
+      "layers": 4,
+      "hidden": 384,
+      "heads": 6,
+      "hf_id": "openai/whisper-tiny",
+      "training": "Supervised, 680k hours"
+    },
+    "whisper-tiny.en": {
+      "params": "39M",
+      "layers": 4,
+      "hidden": 384,
+      "heads": 6,
+      "hf_id": "openai/whisper-tiny.en",
+      "training": "Supervised, English-only"
+    },
+    "whisper-base": {
+      "params": "74M",
+      "layers": 6,
+      "hidden": 512,
+      "heads": 8,
+      "hf_id": "openai/whisper-base",
+      "training": "Supervised, 680k hours"
+    },
+    "whisper-base.en": {
+      "params": "74M",
+      "layers": 6,
+      "hidden": 512,
+      "heads": 8,
+      "hf_id": "openai/whisper-base.en",
+      "training": "Supervised, English-only"
+    },
+    "whisper-small": {
+      "params": "244M",
+      "layers": 12,
+      "hidden": 768,
+      "heads": 12,
+      "hf_id": "openai/whisper-small",
+      "training": "Supervised, 680k hours"
+    },
+    "whisper-small.en": {
+      "params": "244M",
+      "layers": 12,
+      "hidden": 768,
+      "heads": 12,
+      "hf_id": "openai/whisper-small.en",
+      "training": "Supervised, English-only"
+    },
+    "whisper-medium": {
+      "params": "769M",
+      "layers": 24,
+      "hidden": 1024,
+      "heads": 16,
+      "hf_id": "openai/whisper-medium",
+      "training": "Supervised, 680k hours"
+    },
+    "whisper-medium.en": {
+      "params": "769M",
+      "layers": 24,
+      "hidden": 1024,
+      "heads": 16,
+      "hf_id": "openai/whisper-medium.en",
+      "training": "Supervised, English-only"
+    },
+    "whisper-large": {
+      "params": "1.55B",
+      "layers": 32,
+      "hidden": 1280,
+      "heads": 20,
+      "hf_id": "openai/whisper-large",
+      "training": "Supervised, 680k hours"
+    },
+    "whisper-large-v2": {
+      "params": "1.55B",
+      "layers": 32,
+      "hidden": 1280,
+      "heads": 20,
+      "hf_id": "openai/whisper-large-v2",
+      "training": "Supervised, 680k hours"
+    },
+    "whisper-large-v3": {
+      "params": "1.55B",
+      "layers": 32,
+      "hidden": 1280,
+      "heads": 20,
+      "hf_id": "openai/whisper-large-v3",
+      "training": "Supervised, 1M+ hours"
+    },
+    "whisper-large-v3-turbo": {
+      "params": "809M",
+      "layers": 32,
+      "hidden": 1280,
+      "heads": 20,
+      "hf_id": "openai/whisper-large-v3-turbo",
+      "training": "Supervised, distilled"
+    },
+    "hubert-large-ls960-ft": {
+      "params": "317M",
+      "layers": 24,
+      "hidden": 1024,
+      "heads": 16,
+      "hf_id": "facebook/hubert-large-ls960-ft",
+      "training": "SSL + fine-tuned"
+    },
+    "hubert-xlarge-ls960-ft": {
+      "params": "1B",
+      "layers": 48,
+      "hidden": 1280,
+      "heads": 16,
+      "hf_id": "facebook/hubert-xlarge-ls960-ft",
+      "training": "SSL + fine-tuned"
+    },
+    "wav2vec2-large-960h-lv60": {
+      "params": "317M",
+      "layers": 24,
+      "hidden": 1024,
+      "heads": 16,
+      "hf_id": "facebook/wav2vec2-large-960h-lv60",
+      "training": "SSL + fine-tuned"
+    },
+    "wavlm-large": {
+      "params": "317M",
+      "layers": 24,
+      "hidden": 1024,
+      "heads": 16,
+      "hf_id": "microsoft/wavlm-large",
+      "training": "SSL"
+    },
+    "Phi-4-multimodal-instruct": {
+      "params": "2.7B",
+      "layers": 40,
+      "hidden": 3072,
+      "heads": 32,
+      "hf_id": "microsoft/Phi-4-multimodal-instruct",
+      "training": "Supervised, multimodal"
+    },
+    "canary-1b": {
+      "params": "1B",
+      "layers": 24,
+      "hidden": 1024,
+      "heads": 8,
+      "hf_id": "nvidia/canary-1b",
+      "training": "Supervised, multilingual"
+    },
+    "canary-1b-flash": {
+      "params": "1B",
+      "layers": 24,
+      "hidden": 1024,
+      "heads": 8,
+      "hf_id": "nvidia/canary-1b-flash",
+      "training": "Supervised, distilled"
+    },
+    "canary-qwen-2.5b": {
+      "params": "2.5B",
+      "layers": 40,
+      "hidden": 1536,
+      "heads": 12,
+      "hf_id": "nvidia/canary-qwen-2.5b",
+      "training": "Supervised, Qwen decoder"
+    },
+    "parakeet-tdt-0.6b-v2": {
+      "params": "600M",
+      "layers": 30,
+      "hidden": 768,
+      "heads": 8,
+      "hf_id": "nvidia/parakeet-tdt-0.6b-v2",
+      "training": "Supervised, TDT"
+    },
+    "granite-speech-3.3-2b": {
+      "params": "3.3B",
+      "layers": 32,
+      "hidden": 2048,
+      "heads": 16,
+      "hf_id": "ibm-granite/granite-speech-3.3-2b",
+      "training": "Supervised, code-switched"
+    },
+    "speechbrain-loq": {
+      "params": "135M",
+      "layers": 12,
+      "hidden": 512,
+      "heads": 8,
+      "hf_id": "speechbrain/asr-conformer-loquacious",
+      "training": "Supervised"
+    },
+    "w2v2-conformer": {
+      "params": "430M",
+      "layers": 24,
+      "hidden": 1024,
+      "heads": 16,
+      "hf_id": "facebook/wav2vec2-conformer-rel-pos-large",
+      "training": "SSL"
+    }
+  },
+  "acoustic_features": [
+    "f0_max",
+    "f0_mean",
+    "f0_median",
+    "f0_min",
+    "f1_max",
+    "f1_mean",
+    "f1_median",
+    "f1_min",
+    "f2_max",
+    "f2_mean",
+    "f2_median",
+    "f2_min",
+    "f3_max",
+    "f3_mean",
+    "f3_median",
+    "f3_min",
+    "f3_minus_f2_max",
+    "f3_minus_f2_mean",
+    "f3_minus_f2_median",
+    "f3_minus_f2_min",
+    "intensity_max",
+    "intensity_mean",
+    "intensity_median",
+    "intensity_min"
+  ],
+  "n_transformers": 17,
+  "n_conformers": 7
+}
