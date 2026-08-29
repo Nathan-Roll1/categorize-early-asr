@@ -1,0 +1,58 @@
+{
+  "seed": 20260829,
+  "bootstrap_samples": 10000,
+  "pca_dimension": 5,
+  "input_rows": 184473,
+  "models": 24,
+  "datasets": [
+    "ALLSSTAR_2",
+    "CommonVoice_accent_stratified",
+    "SAA",
+    "cam_assess",
+    "cmu-arctic-train",
+    "l2-arctic-dataset-250"
+  ],
+  "reviewed_baseline_max_abs_error": 1.1102230246251565e-16,
+  "input_sha256": {
+    "ALL_PROBING_WITH_PHONEMES.csv": "b573d92d42605a98010e354a0d8b2dc978ec679828de2c2877c3295f794412fb",
+    "ALLDATA_aggregate_metrics (with phonemes).csv": "95ea9658b180b42d4849438c8da7347ff937d57aa692fdae196900a47e8ab5a5"
+  },
+  "center_of_mass_baselines": {
+    "R2 probes": 0.0,
+    "Gender": 0.5,
+    "Accent": 0.16666666666666666,
+    "Phoneme": 0.02564102564102564
+  },
+  "peak_center_direction_agreement": {
+    "Acoustic": {
+      "same_direction": false,
+      "peak_difference": 0.0038292516080506156,
+      "center_difference": -0.02557902259664624,
+      "center_ci_excludes_zero": false
+    },
+    "Gender": {
+      "same_direction": true,
+      "peak_difference": -0.12581699346405228,
+      "center_difference": -0.07990545511044628,
+      "center_ci_excludes_zero": true
+    },
+    "Accent": {
+      "same_direction": true,
+      "peak_difference": -0.2247072440087146,
+      "center_difference": -0.1657228678800708,
+      "center_ci_excludes_zero": true
+    },
+    "Phoneme": {
+      "same_direction": true,
+      "peak_difference": -0.2859574385309679,
+      "center_difference": -0.1512281190237859,
+      "center_ci_excludes_zero": true
+    },
+    "Duration": {
+      "same_direction": true,
+      "peak_difference": 0.16839791472144405,
+      "center_difference": 0.06379828379240948,
+      "center_ci_excludes_zero": true
+    }
+  }
+}

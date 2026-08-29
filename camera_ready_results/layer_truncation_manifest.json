@@ -1,0 +1,34 @@
+{
+  "seed": 20260829,
+  "dataset_id": "PranavBhalerao/l2-arctic-dataset-250",
+  "dataset_revision": "7e3c8665e26e55080fe9a4eb1601524600395af9",
+  "selection": "first N examples per L1 category in dataset order",
+  "l1_categories": [
+    "Arabic",
+    "Hindi",
+    "Korean",
+    "Mandarin",
+    "Spanish",
+    "Vietnamese"
+  ],
+  "models": {
+    "Transformer": {
+      "id": "facebook/wav2vec2-large-960h-lv60",
+      "revision": "8e7d14742e8f98c6bbb24e5231406af321a8f9ce",
+      "backbone": "wav2vec2"
+    },
+    "Conformer": {
+      "id": "facebook/wav2vec2-conformer-rel-pos-large-960h-ft",
+      "revision": "ca7f36f527f234b3cd4f05ecee30361f971e8e33",
+      "backbone": "wav2vec2_conformer"
+    }
+  },
+  "depth_fractions": [
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "bootstrap_samples": 10000,
+  "text_normalization": "lowercase; ASCII letters, digits, apostrophes; collapse whitespace"
+}
