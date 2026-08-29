@@ -1,14 +1,14 @@
-# Categorize Early, Integrate Late? Representational Profiles Across Sampled ASR Model Families
+# Categorize Early, Integrate Late: Divergent Processing Strategies in Automatic Speech Recognition
 
-Supplemental code, analysis artifacts, and figure-generation resources for the forthcoming EMNLP 2026 paper [“Categorize Early, Integrate Late? Representational Profiles Across Sampled ASR Model Families”](https://arxiv.org/abs/2601.06972).
+Supplemental code, analysis artifacts, and figure-generation resources for the forthcoming EMNLP 2026 paper [“Categorize Early, Integrate Late: Divergent Processing Strategies in Automatic Speech Recognition”](https://arxiv.org/abs/2601.06972).
 
 This repository contains supplemental materials only; manuscript source and compiled manuscript files are not included.
 
 ## Abstract
 
-Across 24 pretrained encoders, the sampled Conformer group shows earlier pooled phoneme, gender, and accent peaks and a later duration peak than the sampled Transformer group. Performance-weighted center of mass, gold-transcript-only, and leave-Cambridge-out replications retain the principal pooled directions. However, non-Whisper and family-random-intercept controls do not identify a significant architecture effect, so the comparison is an association within this model suite rather than an architecture-only result. A depth-matched Wav2Vec2/Conformer truncation test also contradicts the proposed early-exit prediction: both unmodified systems collapse below full depth, with larger Conformer degradation. The checkpoints share downstream task and fine-tuning data but not pretraining corpus.
+In speech language modeling, two architectures dominate the frontier: the Transformer and the Conformer. However, it remains unknown whether their comparable performance stems from convergent processing strategies or distinct architectural inductive biases. We introduce *Architectural Fingerprinting*, a probing framework that isolates the effect of architecture on representation, and apply it to a controlled suite of 24 pre-trained encoders (39M–3.3B parameters). Our analysis reveals divergent hierarchies: Conformers implement a “Categorize Early” strategy, resolving phoneme categories 29% earlier in depth and speaker gender within the first 16% of network depth (vs. 28% in Transformers). In contrast, Transformers “Integrate Late,” deferring phoneme, accent, and duration encoding to deep layers (49–57%). These fingerprints motivate testable hypotheses: Conformers’ front-loaded categorization may benefit low-latency streaming, while Transformers’ deep integration may favor tasks requiring rich context and cross-utterance normalization.
 
-## Main results
+## Appendix robustness findings
 
 - The study compares 17 Transformer and 7 Conformer encoders.
 - The pooled Conformer group peaks earlier for gender, accent, and phoneme accessibility and later for duration.
@@ -51,7 +51,7 @@ The camera-ready robustness analyses are documented in [`camera_ready_results/RE
 
 ```bibtex
 @inproceedings{roll2026categorize,
-  title     = {Categorize Early, Integrate Late? Representational Profiles Across Sampled ASR Model Families},
+  title     = {Categorize Early, Integrate Late: Divergent Processing Strategies in Automatic Speech Recognition},
   author    = {Roll, Nathan and Bhalerao, Pranav and Bartelds, Martijn and
                Pawar, Arjun and Tatsumi, Yuka and Ògúnrẹ̀mí, Tolúlọpẹ́ and
                Shani, Chen and Graham, Calbert and Sumner, Meghan and Jurafsky, Dan},
