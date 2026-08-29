@@ -15,12 +15,20 @@
     "Transformer": {
       "id": "facebook/wav2vec2-large-960h-lv60",
       "revision": "8e7d14742e8f98c6bbb24e5231406af321a8f9ce",
-      "backbone": "wav2vec2"
+      "backbone": "wav2vec2",
+      "encoder_layers": 24,
+      "hidden_size": 1024,
+      "pretraining": "Libri-Light; see pinned model card",
+      "fine_tuning": "LibriSpeech-960h"
     },
     "Conformer": {
       "id": "facebook/wav2vec2-conformer-rel-pos-large-960h-ft",
       "revision": "ca7f36f527f234b3cd4f05ecee30361f971e8e33",
-      "backbone": "wav2vec2_conformer"
+      "backbone": "wav2vec2_conformer",
+      "encoder_layers": 24,
+      "hidden_size": 1024,
+      "pretraining": "LibriSpeech-960h; see pinned model card",
+      "fine_tuning": "LibriSpeech-960h"
     }
   },
   "depth_fractions": [
@@ -30,5 +38,16 @@
     1.0
   ],
   "bootstrap_samples": 10000,
+  "audio_sampling_rate_hz": 16000,
+  "n_utterances": 240,
+  "l1_counts": {
+    "Arabic": 40,
+    "Hindi": 40,
+    "Korean": 40,
+    "Mandarin": 40,
+    "Spanish": 40,
+    "Vietnamese": 40
+  },
+  "reference_words": 2257,
   "text_normalization": "lowercase; ASCII letters, digits, apostrophes; collapse whitespace"
 }

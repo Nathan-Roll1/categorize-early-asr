@@ -35,11 +35,19 @@ MODELS = {
         "id": "facebook/wav2vec2-large-960h-lv60",
         "revision": "8e7d14742e8f98c6bbb24e5231406af321a8f9ce",
         "backbone": "wav2vec2",
+        "encoder_layers": 24,
+        "hidden_size": 1024,
+        "pretraining": "Libri-Light; see pinned model card",
+        "fine_tuning": "LibriSpeech-960h",
     },
     "Conformer": {
         "id": "facebook/wav2vec2-conformer-rel-pos-large-960h-ft",
         "revision": "ca7f36f527f234b3cd4f05ecee30361f971e8e33",
         "backbone": "wav2vec2_conformer",
+        "encoder_layers": 24,
+        "hidden_size": 1024,
+        "pretraining": "LibriSpeech-960h; see pinned model card",
+        "fine_tuning": "LibriSpeech-960h",
     },
 }
 DEPTH_FRACTIONS = (0.25, 0.50, 0.75, 1.00)
@@ -139,6 +147,10 @@ def run_model(
     total_layers = len(original_layers)
     if total_layers != 24:
         raise ValueError(f"Expected a 24-layer {architecture}, found {total_layers}")
+    if int(model.config.hidden_size) != 1024:
+        raise ValueError(
+            f"Expected hidden size 1024 for {architecture}, found {model.config.hidden_size}"
+        )
 
     predictions_path = output_dir / "layer_truncation_predictions.csv"
     if predictions_path.exists():
@@ -369,6 +381,28 @@ def summarize(output_dir: Path) -> None:
         "models": MODELS,
         "depth_fractions": DEPTH_FRACTIONS,
         "bootstrap_samples": BOOTSTRAP_SAMPLES,
+        "audio_sampling_rate_hz": 16_000,
+        "n_utterances": int(
+            predictions.loc[
+                predictions["Architecture"].eq(next(iter(MODELS)))
+                & predictions["Depth_Fraction"].eq(1.0),
+                "Sample_ID",
+            ].nunique()
+        ),
+        "l1_counts": {
+            str(label): int(count)
+            for label, count in predictions.loc[
+                predictions["Architecture"].eq(next(iter(MODELS)))
+                & predictions["Depth_Fraction"].eq(1.0)
+            ]["L1"].value_counts().sort_index().items()
+        },
+        "reference_words": int(
+            predictions.loc[
+                predictions["Architecture"].eq(next(iter(MODELS)))
+                & predictions["Depth_Fraction"].eq(1.0),
+                "Reference_Words",
+            ].sum()
+        ),
         "text_normalization": "lowercase; ASCII letters, digits, apostrophes; collapse whitespace",
     }
     (output_dir / "layer_truncation_manifest.json").write_text(

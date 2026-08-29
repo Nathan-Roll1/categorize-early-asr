@@ -27,7 +27,7 @@ python layer_truncation_wer.py \
   --device mps
 ```
 
-The evaluation pins the dataset and model revisions, resamples audio to 16 kHz, and uses 10,000 paired utterance bootstrap samples. It retains each checkpoint's original CTC head and final encoder normalization while keeping only the first 6, 12, 18, or 24 of 24 encoder blocks.
+The evaluation pins the dataset and model revisions, resamples audio to 16 kHz, and uses 10,000 paired utterance bootstrap samples. It retains each checkpoint's original CTC head and final encoder normalization while keeping only the first 6, 12, 18, or 24 of 24 encoder blocks. Both checkpoints use 24 layers, 1024 hidden dimensions, English CTC, and LibriSpeech-960h fine-tuning; their pretraining corpora differ, so the comparison is not an isolated architecture experiment.
 
 The low-latency prediction was not supported: both checkpoints collapsed below full depth, and Conformer degradation was larger at every truncated depth. WER values above 1 are possible because insertions count as errors.
 

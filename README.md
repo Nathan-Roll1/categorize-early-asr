@@ -6,7 +6,7 @@ This repository contains supplemental materials only; manuscript source and comp
 
 ## Abstract
 
-Across 24 pretrained encoders, the sampled Conformer group shows earlier pooled phoneme, gender, and accent peaks and a later duration peak than the sampled Transformer group. Performance-weighted center of mass, gold-transcript-only, and leave-Cambridge-out replications retain the principal pooled directions. However, non-Whisper and family-random-intercept controls do not identify a significant architecture effect, so the comparison is an association within this model suite rather than an architecture-only result. A matched Wav2Vec2/Conformer truncation test also contradicts the proposed early-exit prediction: both unmodified systems collapse below full depth, with larger Conformer degradation.
+Across 24 pretrained encoders, the sampled Conformer group shows earlier pooled phoneme, gender, and accent peaks and a later duration peak than the sampled Transformer group. Performance-weighted center of mass, gold-transcript-only, and leave-Cambridge-out replications retain the principal pooled directions. However, non-Whisper and family-random-intercept controls do not identify a significant architecture effect, so the comparison is an association within this model suite rather than an architecture-only result. A depth-matched Wav2Vec2/Conformer truncation test also contradicts the proposed early-exit prediction: both unmodified systems collapse below full depth, with larger Conformer degradation. The checkpoints share downstream task and fine-tuning data but not pretraining corpus.
 
 ## Main results
 
